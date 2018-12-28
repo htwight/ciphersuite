@@ -1,6 +1,6 @@
 package ciphers;
 
-public class Rotor {
+public abstract class Rotor {
 
     private int position;
     private char[] alphabet;
@@ -34,4 +34,6 @@ public class Rotor {
                 return i;
         return -1;
     }
+
+    protected abstract char encipher(char c);
 }

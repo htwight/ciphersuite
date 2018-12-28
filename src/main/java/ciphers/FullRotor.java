@@ -14,7 +14,8 @@ public class FullRotor extends Rotor implements Encipherable, Decipherable {
         return encipher(ciphertext); //Inverse operation
     }
 
-    private char encipher(char plaintext) {
+    @Override
+    protected char encipher(char plaintext) {
         int inPosition = charIndex(plaintext);
         int outPosition = Math.floorMod(wiring[inPosition] - getPosition(), getAlphabet().length);
         return getAlphabet()[outPosition];
